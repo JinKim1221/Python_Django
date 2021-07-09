@@ -17,7 +17,9 @@ class Bookmark(models.Model):
     # 2. Restrictions (number of words)
     # 3. Sort of form
     # 4. Restrictions of form
-
+    
+    def __str__(self) :
+        return "name : " + self.site_name + ", address : " + self.url
 # Model made -> what type of data will be into database
 # migration -> model is informed in database(create table)
 # makemigrations -> record of change of model

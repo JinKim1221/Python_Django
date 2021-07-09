@@ -12,4 +12,15 @@
             <th scope="col">Delete</th>
         </tr>
     </thead>
+    <tbody>
+        {% for bookmark in object_list %}
+            <tr>
+                <td>{{forloop.counter}}}</td>
+                <td><a href="#">{{bookmark.site_name}}</a></td>
+                <td><a href="{{bookmark.url}}" target="_blank">{{bookmark.url}}</a></td>
+                <td><a href="#" class="btn btn-success">Modify</a></td>
+                <td><a href="#" class="btn btn-success">Delete</a></td>
+            </tr>
+        {% endfor %}
+    </tbody>
 </table>

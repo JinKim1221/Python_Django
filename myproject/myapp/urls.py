@@ -5,5 +5,5 @@ urlpatterns = [
     # http://127.0.0.1/myapp/????
     # ?????
     path("", BookmarkListView.as_view(), name='list'),
-    path("add/", BookmarkCreateView.as_view(), name="Add")
+    path("add/", BookmarkCreateView.as_view(), name="add")
 ]

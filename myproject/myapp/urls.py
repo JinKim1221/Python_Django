@@ -1,8 +1,9 @@
 from django.urls import path
-from .views import BookmarkListView
+from .views import BookmarkListView, BookmarkCreateView
 
 urlpatterns = [
     # http://127.0.0.1/myapp/????
     # ?????
-    path("", BookmarkListView.as_view(), name='List'),
+    path("", BookmarkListView.as_view(), name='list'),
+    path("add/", BookmarkCreateView.as_view(), name="Add")
 ]

@@ -9,4 +9,5 @@ urlpatterns = [
     path("detail/<int:pk>/", BookmarkDetailView.as_view(), name="detail"),
     #<int:pk> : primary key of each bookmark
     path("edit/<int:pk>/", BookmarkUpdateView.as_view(), name = "edit"),
+    path("delete/<int:pk>/", BookmarkDeleteView.as_view(), name = "delete"),
 ]   

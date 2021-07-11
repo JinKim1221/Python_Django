@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 # Model : use database without sql
@@ -20,6 +21,10 @@ class Bookmark(models.Model):
     
     def __str__(self) :
         return "name : " + self.site_name + ", address : " + self.url
+
+    def get_absolute_url(self):
+        return reverse('detail', args=[str(self.id)])
+        
 # Model made -> what type of data will be into database
 # migration -> model is informed in database(create table)
 # makemigrations -> record of change of model

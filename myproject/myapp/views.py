@@ -6,8 +6,9 @@
 # access webpage -> see the webpage
 # input URL -> Server looks for View -> Response
 from django.views.generic.list import ListView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic.detail import DetailView
+
 
 from django.urls import reverse_lazy
 from .models import Bookmark
@@ -24,3 +25,8 @@ class BookmarkCreateView(CreateView):
 
 class BookmarkDetailView(DetailView):
     model = Bookmark
+
+class BookmarkUpdateView(UpdateView):
+    model = Bookmark
+    fields = ['site_name', 'url']
+    template_name_suffix = '_edit'

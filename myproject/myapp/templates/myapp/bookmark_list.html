@@ -1,26 +1,31 @@
-<div class="btn-group">
-    <a href="{% url 'add'%}" class="btn btn-info"> Add Bookmark</a>
-</div>
-<p></p>
-<table class="table">
-    <theadc>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Site</th>
-            <th scope="col">URL</th>
-            <th scope="col">Modify</th>
-            <th scope="col">Delete</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for bookmark in object_list %}
+{% extends 'base.html' %}
+{% block title %} Bookmark list {% endblock %}
+{% block content %}
+    <div class="btn-group">
+        <a href="{% url 'add'%}" class="btn btn-info"> Add Bookmark</a>
+    </div>
+    <p></p>
+    <table class="table">
+        <theadc>
             <tr>
-                <td>{{forloop.counter}}}</td>
-                <td><a href="{% url 'detail' pk=bookmark.id %}">{{bookmark.site_name}}</a></td>
-                <td><a href="{{bookmark.url}}" target="_blank">{{bookmark.url}}</a></td>
-                <td><a href="{% url 'edit' pk=bookmark.id %}" class="btn btn-success">Modify</a></td>
-                <td><a href="{% url 'delete' pk=bookmark.id %}" class="btn btn-success">Delete</a></td>
+                <th scope="col">#</th>
+                <th scope="col">Site</th>
+                <th scope="col">URL</th>
+                <th scope="col">Modify</th>
+                <th scope="col">Delete</th>
             </tr>
-        {% endfor %}
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            {% for bookmark in object_list %}
+                <tr>
+                    <td>{{forloop.counter}}}</td>
+                    <td><a href="{% url 'detail' pk=bookmark.id %}">{{bookmark.site_name}}</a></td>
+                    <td><a href="{{bookmark.url}}" target="_blank">{{bookmark.url}}</a></td>
+                    <td><a href="{% url 'edit' pk=bookmark.id %}" class="btn btn-success">Modify</a></td>
+                    <td><a href="{% url 'delete' pk=bookmark.id %}" class="btn btn-success">Delete</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

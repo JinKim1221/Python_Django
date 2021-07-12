@@ -1,3 +1,9 @@
+{% extends 'base.html' %}
+{% block title %} Bookmark details {% endblock %}
+{% block content %}
+
 {{object.site_name}}<br/>
 {{object.url}}<br/>
 <a href="{% url 'list'%}">Back to list</a>
+
+{% endblock %}
